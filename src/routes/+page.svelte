@@ -1,11 +1,12 @@
 <div class="container">
-
+  <div class="universe">
+  </div>
 </div>
 
 <style>
-  .container{
+  .container {
     width: 100vw;
     height: 100vh;
-    background-color: #1e2525;
+    color: #f2f1ef;
   }
 </style>

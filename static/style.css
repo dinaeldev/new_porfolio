@@ -1,7 +1,38 @@
+:root {
+  --title: "DynaPuff", serif;
+  --text: "Anonymous Pro", serif;
+  --orange: #E0810D;
+  --lapis: #1F579C;
+  --white: #EDEDED;
+  --blue: #1d2c3d;
+}
 
-*{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'PT Sans Narrow';
+  font-family: var(--text);
+}
+
+html {
+  background: radial-gradient(ellipse at bottom, #1d2c3d 0%, #10121b 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+a {
+  text-decoration: none;
+  color: #fdfdfd;
 }
