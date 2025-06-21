@@ -6,22 +6,35 @@
   <!-- <Cloud /> -->
   <img src="/clouds/moon.png" alt="moon" class="moon" />
   <div class="content">
-    <h2>Dinael Aragon</h2>
-    <p>This site is under construction</p>
+    <div class="slogan">
+      <h2>Dinael Aragon</h2>
+      <p>Software & Web Developer</p>
+    </div>
   </div>
 </div>
 
 <style>
   .banner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
+    width: 100%;
     height: 100svh;
     overflow-x: hidden;
     position: relative;
   }
-
+  .banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/edificios.png");
+    background-size: cover;
+    background-position: bottom;
+    opacity: 1;
+    z-index: -1;
+    mask-image: url("/mask.gif");
+    mask-size: cover;
+    mask-position: center;
+    filter: drop-shadow(0 0 10px #1d2133) hue-rotate(20deg);
+    opacity: 0.8;
+  }
   .banner::before {
     content: "";
     position: absolute;
@@ -31,18 +44,7 @@
     background-position: center;
     background-attachment: fixed;
     z-index: -2;
-    mask-image: url("/mask.gif");
-    mask-size: cover;
-    mask-position: center;
     filter: hue-rotate(10deg) saturate(1);
-  }
-  .banner::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: var(--bg-primary);
-    opacity: 0.5;
-    z-index: -1;
   }
   .moon {
     position: fixed;
@@ -53,10 +55,29 @@
     z-index: -1;
     filter: drop-shadow(0 0 1.5rem #c8e0ff) drop-shadow(0 0 0.2rem #c8e0ff);
   }
-  h2 {
+  .slogan {
+    width: 95%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: slogan 3s ease forwards;
+    transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-delay: 1s;
+  }
+  .slogan h2 {
     font-size: 2.5rem;
   }
-  p {
+  .slogan p {
     font-size: 1.5rem;
+  }
+  @keyframes slogan {
+    from {
+      top: 50%;
+      left: 50%;
+    }
+    to {
+      top: 30%;
+    }
   }
 </style>

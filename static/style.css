@@ -9,6 +9,7 @@
   --text-primary: #F1F1F1;
   --text-muted: #888;
   --border: #2F3B63;
+  --bg-gray: #5d6b94;
 }
 
 * {
@@ -19,10 +20,20 @@
 
 body {
   font-family: "MedievalSharp", cursive;
-  background-color: var(--bg-primary);
   color: #f1f1f1;
   letter-spacing: -1px;
+  overflow-x: hidden;
+  width: 100dvw;
+  height: 1150vh;
+  position: relative;
+  background-color: var(--bg-gray);
+  scrollbar-width: 0;
 }
+body::-webkit-scrollbar{
+  width: none;
+  display: none;
+}
+
 
 p {
   font-family: "Audiowide", sans-serif;
