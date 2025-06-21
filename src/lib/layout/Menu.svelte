@@ -18,11 +18,10 @@
   </button>
   <div class="menu-container" class:open={isOpen}>
     <menu>
-      <li>About Us</li>
-      <li>About Us</li>
-      <li>About Us</li>
-      <li>About Us</li>
-      <li>About Us</li>
+      <li>ABOUT ME</li>
+      <li>EXPERIENCE</li>
+      <li>SERVICES</li>
+      <li>CONTACT</li>
     </menu>
   </div>
 </div>
@@ -141,6 +140,33 @@
   .menu-container menu li {
     opacity: 0;
     transform: translateY(20px);
+    user-select: none;
+    z-index: 3;
+    cursor: pointer;
+    line-height: 1.5;
+    position: relative;
+    color: var(--accent-pink);
+  }
+  .menu-container menu li::before {
+    content: "";
+    width: 0%;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    bottom: 0;
+    transition: all 500ms ease;
+    transform-origin: center;
+  }
+   .menu-container menu li:hover{
+    color: var(--accent-blue);
+   }
+  .menu-container menu li:hover::before {
+    background-color: var(--accent-blue);
+    opacity: 1;
+    width: 150%;
   }
   .menu-container.open menu li {
     animation: fadeInUp 1s forwards;
