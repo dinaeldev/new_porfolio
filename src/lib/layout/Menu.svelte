@@ -8,7 +8,19 @@
 
 <div>
   <button aria-label="menu" onclick={() => (isOpen = !isOpen)}>
-    <div class="wormhole">
+    <div class="wormhole" class:active={isOpen}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        stroke="var(--accent-pink)"
+        stroke-width="2.5"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+        />
+      </svg>
       <div class="rings">
         <div class="ring"></div>
         <div class="ring"></div>
@@ -35,7 +47,7 @@
   }
   .wormhole {
     width: 60px;
-    height: 75px;
+    height: 85px;
     border-radius: 50%;
     background: radial-gradient(
       circle at center,
@@ -74,6 +86,33 @@
     animation-delay: 1s;
     border: 1px solid var(--accent-pink);
   }
+  svg {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  line {
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke: var(--accent-pink);
+    transition: all 0.3s ease;
+  }
+  .wormhole.active .top {
+    transform: rotate(45deg);
+    transform-origin: center center;
+    width: 50%;
+  }
+  .wormhole.active .bottom {
+    transform: rotate(-45deg);
+    transform-origin: center center;
+  }
+  .wormhole.active .middle {
+    opacity: 0;
+  }
+
   @keyframes pulseRing {
     0%,
     100% {
@@ -160,9 +199,9 @@
     transition: all 500ms ease;
     transform-origin: center;
   }
-   .menu-container menu li:hover{
+  .menu-container menu li:hover {
     color: var(--accent-blue);
-   }
+  }
   .menu-container menu li:hover::before {
     background-color: var(--accent-blue);
     opacity: 1;
